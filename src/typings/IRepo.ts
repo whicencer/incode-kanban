@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-export type IRepo = Repo | null;
-export interface Repo {
+export type IRepo = RepoIssue[] | null;
+export interface RepoIssue {
   url:                      string;
   repository_url:           string;
   labels_url:               string;

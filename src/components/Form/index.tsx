@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { IGithubApi } from '../../typings/IGithubApi';
 import styles from './styles.module.scss';
 import { useGetRepo } from './hooks';
-// import { toast } from 'react-toastify';
 
 interface Props {
   api: IGithubApi

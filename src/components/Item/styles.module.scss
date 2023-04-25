@@ -1,0 +1,10 @@
+.item {
+  border: 2px solid black;
+  padding: 7px;
+  background-color: #fff;
+  margin-top: 10px;
+
+  :not(:last-child) {
+    margin: 0;
+  }
+}

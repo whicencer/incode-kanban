@@ -2,19 +2,25 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IRepo } from '../../typings/IRepo';
 
 interface Repo {
-  currentRepo: IRepo
+  issues: IRepo;
+  name: string;
+  owner: string;
 }
 
 const initialState: Repo = {
-  currentRepo: null
+  issues: null,
+  name: '',
+  owner: ''
 };
 
 const repoSlice = createSlice({
   name: 'repo',
   initialState,
   reducers: {
-    setCurrentRepo(state, action: PayloadAction<IRepo>) {
-      state.currentRepo = action.payload;
+    setCurrentRepo(state, action: PayloadAction<Repo>) {
+      state.issues = action.payload.issues;
+      state.owner = action.payload.owner;
+      state.name = action.payload.name;
     }
   }
 });
