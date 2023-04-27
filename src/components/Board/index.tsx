@@ -27,11 +27,15 @@ export const Board: React.FC<Props> = ({ column, columnId }) => {
             }}
             >
             <h3>{column.title}</h3>
-            {column.items?.map((item, index) => {
-              return (
-                <Item index={index} issue={item} key={item.node_id} />
-              );
-            })}
+            {
+              column.items?.length
+                ? column.items?.map((item, index) => {
+                    return (
+                      <Item index={index} issue={item} key={item.node_id} />
+                    );
+                  })
+                : <p>Empty</p>
+            }
             {provided.placeholder}
           </div>
         );
