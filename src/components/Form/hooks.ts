@@ -12,8 +12,9 @@ export const useGetRepo = (api: IGithubApi, owner: string, repo: string) => {
       .then((data: any) => {
         if (data.message) {
           toast.error('404 Not Found');
+        } else {
+          dispatch(setCurrentRepo({ issues: data, name: repo, owner }));
         }
-        dispatch(setCurrentRepo({ issues: data, name: repo, owner }));
       })
       .catch(console.log);
   };
