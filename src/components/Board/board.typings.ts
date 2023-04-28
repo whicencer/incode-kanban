@@ -13,13 +13,6 @@ export interface Props {
   setClosed: Dispatch<SetStateAction<RepoIssue[]>>;
 }
 
-export type Map = {
-  [key: string]: {
-    updateList: Dispatch<SetStateAction<RepoIssue[]>>,
-    listName: string
-  }
-};
-
 export interface Drop {
   issue: RepoIssue,
   status: string
