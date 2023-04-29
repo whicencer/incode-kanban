@@ -17,7 +17,7 @@ export const Form: React.FC<Props> = ({ api }) => {
 
   return (
     <div className={styles.form}>
-      <input onChange={(e) => setLink(e.target.value)} placeholder="GitHub repo URL" type="text" />
+      <input value={link} onChange={(e) => setLink(e.target.value)} placeholder="GitHub repo URL" type="text" />
       <button onClick={getRepo}>Load issues</button>
     </div>
   );

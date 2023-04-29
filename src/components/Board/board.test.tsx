@@ -50,6 +50,4 @@ describe('Board', () => {
     expect(columnWithEmptyItems.items?.length).toBe(0);
     expect(emptyText).toBeVisible();
   });
-
-  // it('Board background turning lightblue on dragging', () => {});
 });
