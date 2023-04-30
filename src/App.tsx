@@ -4,6 +4,7 @@ import { Repository } from './components/Repository';
 import { useTypedSelector } from './hooks/useTypedSelector';
 import { githubApiProvider } from './providers/githubApiProvider';
 import { IGithubApi } from './typings/IGithubApi';
+import {useGetRepo} from "./components/Form/hooks.ts";
 
 interface Props {
   api: IGithubApi
@@ -11,10 +12,11 @@ interface Props {
 
 const App: React.FC<Props> = ({ api }) => {
   const { issues, name, owner } = useTypedSelector(state => state.repo);
+  const getRepo = useGetRepo();
 
   return (
     <>
-      <Form api={api} />
+      <Form getRepo={getRepo} api={api} />
       {
         name != ''
           ? <Repository issues={issues} name={name} owner={owner} />

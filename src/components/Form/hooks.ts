@@ -3,12 +3,11 @@ import { useDispatch } from "react-redux";
 import { IGithubApi } from "../../typings/IGithubApi";
 import { setCurrentRepo } from "../../store/slices/repo";
 
-export const useGetRepo = (api: IGithubApi, owner: string, repo: string) => {
+export const useGetRepo = () => {
   const dispatch = useDispatch();
 
-  return () => {
+  return (api: IGithubApi, owner: string, repo: string) => {
     api.getRepo(owner, repo)
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       .then((data: any) => {
         if (data.message) {
           toast.error('404 Not Found');
