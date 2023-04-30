@@ -50,7 +50,7 @@ describe('Board', () => {
     expect(emptyText).toBeVisible();
   });
 
-  it('On dragstart board background color should be lightblue', async () => {
+  it('On dragstart change background color of card on #efefef and board on lightblue', async () => {
     const {container} = render(
       <DragDropContext onDragEnd={() => {}}>
         <Board column={column} columnId={columnId} />
@@ -64,6 +64,7 @@ describe('Board', () => {
       fireEvent.mouseMove(draggableItem, { clientX: 100, clientY: 100 });
     }
 
+    expect(draggableItem).toHaveStyle('background: #efefef');
     expect(board).toHaveStyle('background: lightblue');
   });
 });

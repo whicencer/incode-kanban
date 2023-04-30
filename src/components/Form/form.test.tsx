@@ -25,7 +25,6 @@ describe('Form', () => {
   it('Input value changes on typing', () => {
     const inputElement= screen.getByRole('textbox') as HTMLInputElement;
     fireEvent.change(inputElement, {target: {value: '23'}});
-    console.log(inputElement.value);
     expect(inputElement.value).toBe('23');
   });
 
